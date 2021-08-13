@@ -22,9 +22,9 @@ const data = {
         'rgba(153, 102, 255, 1)',
         'rgba(255, 159, 64, 1)',
       ],
-      borderWidth: 2,
-    },
-  ],
+      borderWidth: 2
+    }
+  ]
 };
 
 const PieChart = () => (
@@ -32,7 +32,9 @@ const PieChart = () => (
     <div className='header'>
       <h1 className='title'>Pie Chart</h1>
     </div>
-    <Pie data={data} />
+    <div>
+      <Pie data={data} width={750} height={750} options={{ maintainAspectRatio: false }}/>
+    </div>
   </>
 );
 
