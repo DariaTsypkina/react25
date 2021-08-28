@@ -1,0 +1,11 @@
+.button {
+    width: 200px;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    margin: 20px;
+}
+
+.button__success {
+    background: green;
+    color: white;
+}
