@@ -1,6 +1,4 @@
 import React from "react";
-import styles from './button.css';
-import * as classnames from 'classnames';
 
 // export default class Button extends React.Component {
 //     render() {
@@ -16,19 +14,28 @@ import * as classnames from 'classnames';
 //     }
 // }
 
+// export default class Button extends React.Component {
+//     render() {
+//         const theme = this.props.theme;
+//         return (
+//             <div className={theme.outer}>
+//                 <div className={theme.inner}>
+//                     <h3>Заголовок</h3>
+//                 </div>
+//             </div>
+//         )
+//     }
+// }
+
 export default class Button extends React.Component {
     render() {
-        const className = classnames(
-            'button',
-            {
-                ['button__success']: this.props.success,
-            },
-        );
-
+        const theme = this.props.theme;
         return (
-            <button className={className}>
-                Нажми меня
-            </button>
-        );
+            <div className={theme.outer}>
+                <div className={theme.inner}>
+                    <h3>Заголовок</h3>
+                </div>
+            </div>
+        )
     }
 }

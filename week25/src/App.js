@@ -1,3 +1,4 @@
+import React from "react";
 // import { Pie } from 'react-chartjs-2';
 
 // const data = {
@@ -139,17 +140,44 @@
 
 // export default App;
 
-import React from "react";
-import Button from './components/button';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <Button/>
-      </div>
-    );
-  }
+// import Button from "./components/button";
+// import Button from './components/button';
+
+// class App extends React.Component {
+//   render() {
+//     return (
+//       <div className="App">
+//         <Button/>
+//       </div>
+//     );
+//   }
+// }
+
+// export default App;
+
+// import Button from './components/button';
+// import themeA from "./components/theme-a.css";
+// import themeB from "./components/theme-b.css";
+
+// function App() {
+//   return (
+//     <div>
+//       <Button theme={themeA}/>
+//       <Button theme={themeB}/>
+//     </div>
+//   );
+// }
+
+import CardList from "./components/CardList";
+
+function App() {
+  return (
+    <div>
+      <CardList/>
+    </div>
+  );
 }
+
 
 export default App;
