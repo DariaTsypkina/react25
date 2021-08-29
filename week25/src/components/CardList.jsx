@@ -11,6 +11,7 @@ class CardList extends React.Component {
                     description="Такие только у нас"
                     imgLink="https://img.corsocomo.com/image/cache/data/w/402-LM2P1P/402-LM2P1P%20(3)-1000x1000.jpg"
                     addedToCart={0}
+                    newCollection={true}
                 />
                 <Card
                     title="Пляжные тапки"

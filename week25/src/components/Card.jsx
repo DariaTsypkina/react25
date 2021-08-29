@@ -42,7 +42,7 @@ import AddToCartForm from './AddToCardFrom';
 
 export default class Card extends React.Component {
     render() {
-        const { title, price, description, imgLink, addedToCart } = this.props;
+        const { title, price, description, imgLink, addedToCart, newCollection } = this.props;
         // let actionItem;
         // if (addedToCart) {
         //     actionItem = <AddToCartForm addedToCart={addedToCart} />;
@@ -55,7 +55,11 @@ export default class Card extends React.Component {
                     {imgLink &&
                         <img src={imgLink} alt={title} width={200} />
                     }
-                    <h4 className="card-title">{title}</h4>
+                    {
+                        newCollection
+                            ? <h4 className="card-title">{title} NEW</h4>
+                            : <h4 className="card-title">{title}</h4>
+                    }
                     <p className="card-text">{description}</p>
                 </div>
                 <div className="card-footer">

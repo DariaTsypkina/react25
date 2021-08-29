@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/dariatsipkina/react25/issues"
   },
-  "homepage": "https://github.com/dariatsipkina/react25#readme"
+  "homepage": "https://github.com/dariatsipkina/react25#readme",
+  "dependencies": {
+    "sass": "^1.38.2"
+  }
 }
