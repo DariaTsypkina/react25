@@ -5,7 +5,7 @@ export default class Card extends React.Component {
     render() {
         const { price, speed, upper, priceContainer, chosen } = this.props;
         return (
-            <div className={chosen !== false ? styles.card && chosen.card : styles.card}>
+            <div className={price > 500 ? styles.card && chosen.card : styles.card}>
                 <div className={styles.card__titleContainer && upper}>
                     <div className={styles.card__title}>Безлимитный {price}</div>
                 </div>
