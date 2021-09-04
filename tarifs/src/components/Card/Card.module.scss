@@ -16,6 +16,8 @@
         height: 50px;
         text-align: center;
         line-height: 50px;
+        color: white;
+        font-size: larger;
     }
 
     &__span {
@@ -38,4 +40,41 @@
         background-color: rgb(189, 189, 189);
         border-top: 1px solid white;
     }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.priceContainer {
+    height: 100px;
+    line-height: 100px;
+    color: white;
+    border-top: 1px solid white;
+    text-align: center;
+}
+
+.black {
+    background-color: rgb(77, 77, 77);
+}
+
+.blue {
+    background-color: rgb(85, 155, 196);
+}
+
+.green {
+    background-color: rgb(117, 184, 114);
+}
+
+.red {
+    background-color: rgb(226, 112, 104);
+}
+
+.selected {
+    width: 250px;
+    font-weight: bolder;
+    font-size: larger;
+    z-index: 1;
+    box-shadow: 4px 30px 30px 19px rgba(14, 16, 17, 0.24);
+    cursor: pointer;
 }
