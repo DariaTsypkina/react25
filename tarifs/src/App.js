@@ -4,12 +4,12 @@ import './assets/styles/normalize.css';
 // import Example from './components/Example/Example';
 // import FunctionalComponent from './components/Hooks/HooksEx';
 // import Clock from './components/Clock/Clock';
-import CommentsContainer from './components/Comments/CommentsContainer';
+import Comments from './components/Comments/Comments';
 
 
 function App() {
   return (
-    <CommentsContainer/>
+    <Comments/>
   );
 }
 

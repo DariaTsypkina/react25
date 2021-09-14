@@ -2,14 +2,9 @@
     box-sizing: border-box;
 }
 
-.container,
-.comments-form,
-.form-container {
+.container {
     display: flex;
     flex-direction: column;
-}
-
-.container {
     justify-content: space-between;
     align-items: center;
 
@@ -22,9 +17,21 @@
     border: 1px solid gray;
 }
 
-.comments-container {
+.comments_container {
     width: 100%;
     max-height: 600px;
+}
+
+.textarea {
+    width: 100%;
+
+    &_container {
+        width: 100%;
+    }
+}
+
+.button {
+    height: 30px;
 }
 
 .message {
@@ -33,14 +40,11 @@
     border-bottom: 1px solid gray;
 }
 
-.comments-form {
-    width: 100%;
+.red {
+
+    border-bottom: 1px solid gray;
 }
 
-.textarea {
-    width: 100%;
-}
-
-.button {
-    height: 30px;
+.noRed {
+    background-color: white;
 }

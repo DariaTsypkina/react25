@@ -1,4 +1,5 @@
 import React from "react";
+import styles from './styles.module.scss';
 
 export default class Comments extends React.Component {
     state = {
@@ -18,7 +19,6 @@ export default class Comments extends React.Component {
         });
     }
 
-
     // setState - чтобы засунуть что-то в стейт
     handleClick = (newComment) => {
         this.setState({
@@ -31,20 +31,24 @@ export default class Comments extends React.Component {
     render() {
         const { term, comments } = this.state;
         return (
-            <div>
-                <div>
+            <div className={styles.container}>
+                <div className={styles.comments_container}>
                     {
                         comments.map(comment => {
-                            return <p>{comment}</p>
+                            return <div className={styles.message}>{comment}</div>
                         })
                     }
                 </div>
 
-                <div>
-                    <input value={term} onChange={this.handleChange} />
-                    <button onClick={() => this.handleClick(term)}>Send</button>
+                <div className={styles.textarea_container}>
+                    <textarea
+                        className={styles.textarea}
+                        value={term}
+                        onChange={this.handleChange} />
+                    <button className={styles.button} onClick={() => this.handleClick(term)}>Send</button>
                 </div>
             </div>
         )
     }
+
 }
