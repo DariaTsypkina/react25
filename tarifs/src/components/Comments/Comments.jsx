@@ -10,6 +10,10 @@ export default class Comments extends React.Component {
     componentDidMount() {
         // проверяем, есть ли что-то в локал сторидже
         // если есть, то берем и сетаем в стейт
+        if (localStorage.getItem('comments') !== null) {
+            const restoredComments = JSON.parse(localStorage.getItem('comments'));
+            this.setState({ comments: restoredComments });
+        }
     }
 
     handleChange = (e) => {
@@ -21,11 +25,13 @@ export default class Comments extends React.Component {
 
     // setState - чтобы засунуть что-то в стейт
     handleClick = (newComment) => {
-        this.setState({
-            ...this.state,
-            comments: [newComment, ...this.state.comments],
-            term: ''
-        }, () => { }); // здесь будет отправка обновленного стейта в сторадж
+        if (newComment) {
+            this.setState({
+                ...this.state,
+                comments: [{ comment: newComment }, ...this.state.comments],
+                term: ''
+            }, () => { localStorage.setItem('comments', JSON.stringify(this.state.comments)) }); // здесь будет отправка обновленного стейта в сторадж
+        }
     }
 
     render() {
@@ -34,8 +40,10 @@ export default class Comments extends React.Component {
             <div className={styles.container}>
                 <div className={styles.comments_container}>
                     {
-                        comments.map(comment => {
-                            return <div className={styles.message}>{comment}</div>
+                        comments.map((commentObj, index) => {
+                            return <div
+                                key={(Math.random() * 1000).toFixed()}
+                                className={index === 0 ? styles.message && styles.yellow : styles.message}>{commentObj.comment}</div>
                         })
                     }
                 </div>
@@ -44,11 +52,13 @@ export default class Comments extends React.Component {
                     <textarea
                         className={styles.textarea}
                         value={term}
-                        onChange={this.handleChange} />
-                    <button className={styles.button} onClick={() => this.handleClick(term)}>Send</button>
+                        onChange={this.handleChange}
+                        placeholder="Type your comment..." />
+                    <button
+                        className={styles.button}
+                        onClick={() => this.handleClick(term)}>Send</button>
                 </div>
             </div>
         )
     }
-
 }
