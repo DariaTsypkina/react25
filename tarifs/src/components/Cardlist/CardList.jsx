@@ -29,10 +29,17 @@ export default class CardList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            itemsInCart: 0
+            itemsInCart: 0,
+            checked: false
         }
         this.child = React.createRef();
     }
+
+    handleChange = () => {
+        console.log('foo');
+        this.setState({ checked: !this.state.checked }, () => { console.log('baz') });
+        console.log('bar');
+    };
 
 
     addToCart = () => {
@@ -51,6 +58,7 @@ export default class CardList extends React.Component {
             <React.Fragment>
                 <p>В корзине {this.state.itemsInCart}</p>
                 <button onClick={this.clean}>clean cart</button>
+                <button onClick={this.handleChange}>click</button>
                 <div className={styles.cardList}>
                     {
                         this.props.items.map(item =>
